@@ -2,12 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F0F0F0"
     tools:context=".ui.main.DetailFragment">
 
-
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/swipelayout"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/constraintLayout"
+        >
     <TextView
         android:id="@+id/cityName"
         android:layout_width="wrap_content"
@@ -15,6 +25,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="8dp"
+        android:textSize="36sp"
+        android:text="Manila"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,9 +36,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:src="@drawable/like"
+        android:src="@drawable/likewhite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cityName" />
+        app:layout_constraintTop_toTopOf="@+id/cityName"
+        />
 
     <TextView
         android:id="@+id/temperatureDetail"
@@ -34,7 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="60dp"
-        android:textSize="48sp"
+        android:textSize="30sp"
+        android:text="36.0 "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cityName" />
 
@@ -43,6 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:text="Cloud"
         app:layout_constraintStart_toEndOf="@+id/temperatureDetail"
         app:layout_constraintTop_toTopOf="@+id/temperatureDetail" />
 
@@ -51,6 +66,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:text="high 36.0 / low 30.0"
         app:layout_constraintBottom_toBottomOf="@+id/temperatureDetail"
         app:layout_constraintStart_toEndOf="@+id/temperatureDetail" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
